@@ -4,14 +4,6 @@
     "id": "App",
     "path": "",
     "children": {
-      "Tree": {
-        "id": "Tree",
-        "path": "Tree",
-        "constructInfo": {
-          "fqn": "@aws-cdk/core.Construct",
-          "version": "1.204.0"
-        }
-      },
       "CdkTestStack": {
         "id": "CdkTestStack",
         "path": "CdkTestStack",
@@ -32,8 +24,8 @@
                   }
                 },
                 "constructInfo": {
-                  "fqn": "@aws-cdk/aws-s3.CfnBucket",
-                  "version": "1.204.0"
+                  "fqn": "aws-cdk-lib.aws_s3.CfnBucket",
+                  "version": "2.101.0"
                 }
               },
               "Policy": {
@@ -78,20 +70,20 @@
                       }
                     },
                     "constructInfo": {
-                      "fqn": "@aws-cdk/aws-s3.CfnBucketPolicy",
-                      "version": "1.204.0"
+                      "fqn": "aws-cdk-lib.aws_s3.CfnBucketPolicy",
+                      "version": "2.101.0"
                     }
                   }
                 },
                 "constructInfo": {
-                  "fqn": "@aws-cdk/aws-s3.BucketPolicy",
-                  "version": "1.204.0"
+                  "fqn": "aws-cdk-lib.aws_s3.BucketPolicy",
+                  "version": "2.101.0"
                 }
               }
             },
             "constructInfo": {
-              "fqn": "@aws-cdk/aws-s3.Bucket",
-              "version": "1.204.0"
+              "fqn": "aws-cdk-lib.aws_s3.Bucket",
+              "version": "2.101.0"
             }
           },
           "MyFirstAsset": {
@@ -102,66 +94,22 @@
                 "id": "Stage",
                 "path": "CdkTestStack/MyFirstAsset/Stage",
                 "constructInfo": {
-                  "fqn": "@aws-cdk/core.AssetStaging",
-                  "version": "1.204.0"
+                  "fqn": "aws-cdk-lib.AssetStaging",
+                  "version": "2.101.0"
                 }
               },
               "AssetBucket": {
                 "id": "AssetBucket",
                 "path": "CdkTestStack/MyFirstAsset/AssetBucket",
                 "constructInfo": {
-                  "fqn": "@aws-cdk/aws-s3.BucketBase",
-                  "version": "1.204.0"
+                  "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                  "version": "2.101.0"
                 }
               }
             },
             "constructInfo": {
-              "fqn": "@aws-cdk/aws-s3-assets.Asset",
-              "version": "1.204.0"
-            }
-          },
-          "AssetParameters": {
-            "id": "AssetParameters",
-            "path": "CdkTestStack/AssetParameters",
-            "children": {
-              "00056d60aa682caf969e078fa13456af7552e0ae458512d84a456257f8442990": {
-                "id": "00056d60aa682caf969e078fa13456af7552e0ae458512d84a456257f8442990",
-                "path": "CdkTestStack/AssetParameters/00056d60aa682caf969e078fa13456af7552e0ae458512d84a456257f8442990",
-                "children": {
-                  "S3Bucket": {
-                    "id": "S3Bucket",
-                    "path": "CdkTestStack/AssetParameters/00056d60aa682caf969e078fa13456af7552e0ae458512d84a456257f8442990/S3Bucket",
-                    "constructInfo": {
-                      "fqn": "@aws-cdk/core.CfnParameter",
-                      "version": "1.204.0"
-                    }
-                  },
-                  "S3VersionKey": {
-                    "id": "S3VersionKey",
-                    "path": "CdkTestStack/AssetParameters/00056d60aa682caf969e078fa13456af7552e0ae458512d84a456257f8442990/S3VersionKey",
-                    "constructInfo": {
-                      "fqn": "@aws-cdk/core.CfnParameter",
-                      "version": "1.204.0"
-                    }
-                  },
-                  "ArtifactHash": {
-                    "id": "ArtifactHash",
-                    "path": "CdkTestStack/AssetParameters/00056d60aa682caf969e078fa13456af7552e0ae458512d84a456257f8442990/ArtifactHash",
-                    "constructInfo": {
-                      "fqn": "@aws-cdk/core.CfnParameter",
-                      "version": "1.204.0"
-                    }
-                  }
-                },
-                "constructInfo": {
-                  "fqn": "@aws-cdk/core.Construct",
-                  "version": "1.204.0"
-                }
-              }
-            },
-            "constructInfo": {
-              "fqn": "@aws-cdk/core.Construct",
-              "version": "1.204.0"
+              "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+              "version": "2.101.0"
             }
           },
           "CDKMetadata": {
@@ -172,26 +120,50 @@
                 "id": "Default",
                 "path": "CdkTestStack/CDKMetadata/Default",
                 "constructInfo": {
-                  "fqn": "@aws-cdk/core.CfnResource",
-                  "version": "1.204.0"
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.101.0"
                 }
               }
             },
             "constructInfo": {
-              "fqn": "@aws-cdk/core.Construct",
-              "version": "1.204.0"
+              "fqn": "constructs.Construct",
+              "version": "10.3.0"
+            }
+          },
+          "BootstrapVersion": {
+            "id": "BootstrapVersion",
+            "path": "CdkTestStack/BootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.101.0"
+            }
+          },
+          "CheckBootstrapVersion": {
+            "id": "CheckBootstrapVersion",
+            "path": "CdkTestStack/CheckBootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnRule",
+              "version": "2.101.0"
             }
           }
         },
         "constructInfo": {
-          "fqn": "@aws-cdk/core.Stack",
-          "version": "1.204.0"
+          "fqn": "aws-cdk-lib.Stack",
+          "version": "2.101.0"
+        }
+      },
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree",
+        "constructInfo": {
+          "fqn": "constructs.Construct",
+          "version": "10.3.0"
         }
       }
     },
     "constructInfo": {
-      "fqn": "@aws-cdk/core.App",
-      "version": "1.204.0"
+      "fqn": "aws-cdk-lib.App",
+      "version": "2.101.0"
     }
   }
 }

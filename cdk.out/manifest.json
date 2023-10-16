@@ -1,10 +1,12 @@
 {
-  "version": "21.0.0",
+  "version": "34.0.0",
   "artifacts": {
-    "Tree": {
-      "type": "cdk:tree",
+    "CdkTestStack.assets": {
+      "type": "cdk:asset-manifest",
       "properties": {
-        "file": "tree.json"
+        "file": "CdkTestStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
       }
     },
     "CdkTestStack": {
@@ -12,163 +14,64 @@
       "environment": "aws://431549854911/us-east-1",
       "properties": {
         "templateFile": "CdkTestStack.template.json",
-        "validateOnSynth": false
-      },
-      "metadata": {
-        "/CdkTestStack": [
-          {
-            "type": "aws:cdk:asset",
-            "data": {
-              "path": "asset.00056d60aa682caf969e078fa13456af7552e0ae458512d84a456257f8442990.png",
-              "id": "00056d60aa682caf969e078fa13456af7552e0ae458512d84a456257f8442990",
-              "packaging": "file",
-              "sourceHash": "00056d60aa682caf969e078fa13456af7552e0ae458512d84a456257f8442990",
-              "s3BucketParameter": "AssetParameters00056d60aa682caf969e078fa13456af7552e0ae458512d84a456257f8442990S3Bucket4247740D",
-              "s3KeyParameter": "AssetParameters00056d60aa682caf969e078fa13456af7552e0ae458512d84a456257f8442990S3VersionKeyBD6D1C31",
-              "artifactHashParameter": "AssetParameters00056d60aa682caf969e078fa13456af7552e0ae458512d84a456257f8442990ArtifactHash3125DC2E"
-            },
-            "trace": [
-              "ConstructNode.addMetadata (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/construct-compat.js:416:62)",
-              "LegacyStackSynthesizer.doAddFileAsset (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:202:29)",
-              "LegacyStackSynthesizer.addFileAsset (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:98:25)",
-              "Stack.addFileAsset (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/stack.js:473:33)",
-              "/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:59",
-              "withoutDeprecationWarnings (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:229:16)",
-              "LegacyStackSynthesizer.addFileAsset (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:20)",
-              "new Asset (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:46:44)",
-              "Kernel._Kernel_create (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:10104:25)",
-              "Kernel.create (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:9775:93)",
-              "KernelHost.processRequest (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:11691:36)",
-              "KernelHost.run (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:11651:22)",
-              "Immediate._onImmediate (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:11652:46)",
-              "process.processImmediate (node:internal/timers:478:21)"
-            ]
-          }
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::431549854911:role/cdk-hnb659fds-deploy-role-431549854911-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::431549854911:role/cdk-hnb659fds-cfn-exec-role-431549854911-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-431549854911-us-east-1/21c942c2488b372b81fe70f59a8ad554dc8618ebf8b07bc203910552087e6524.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "CdkTestStack.assets"
         ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::431549854911:role/cdk-hnb659fds-lookup-role-431549854911-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "CdkTestStack.assets"
+      ],
+      "metadata": {
         "/CdkTestStack/MyFirstBucket/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "MyFirstBucketB8884501",
-            "trace": [
-              "new Bucket (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/aws-s3/lib/bucket.js:666:26)",
-              "Kernel._Kernel_create (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:10104:25)",
-              "Kernel.create (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:9775:93)",
-              "KernelHost.processRequest (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:11691:36)",
-              "KernelHost.run (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:11651:22)",
-              "Immediate._onImmediate (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:11652:46)",
-              "process.processImmediate (node:internal/timers:478:21)"
-            ]
+            "data": "MyFirstBucketB8884501"
           }
         ],
         "/CdkTestStack/MyFirstBucket/Policy/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "MyFirstBucketPolicy3243DEFD",
-            "trace": [
-              "new BucketPolicy (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/aws-s3/lib/bucket-policy.js:45:25)",
-              "Bucket.addToResourcePolicy (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/aws-s3/lib/bucket.js:169:27)",
-              "Grant.addToPrincipalOrResource (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/aws-iam/lib/grant.js:75:49)",
-              "Bucket.grantPublicAccess (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/aws-s3/lib/bucket.js:367:26)",
-              "/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:9851:172",
-              "Kernel._Kernel_ensureSync (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:10476:24)",
-              "Kernel.invoke (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:9851:102)",
-              "KernelHost.processRequest (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:11691:36)",
-              "KernelHost.run (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:11651:22)",
-              "Immediate._onImmediate (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:11652:46)",
-              "process.processImmediate (node:internal/timers:478:21)"
-            ]
-          }
-        ],
-        "/CdkTestStack/AssetParameters/00056d60aa682caf969e078fa13456af7552e0ae458512d84a456257f8442990/S3Bucket": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "AssetParameters00056d60aa682caf969e078fa13456af7552e0ae458512d84a456257f8442990S3Bucket4247740D",
-            "trace": [
-              "new FileAssetParameters (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:12:36)",
-              "LegacyStackSynthesizer.doAddFileAsset (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:189:22)",
-              "LegacyStackSynthesizer.addFileAsset (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:98:25)",
-              "Stack.addFileAsset (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/stack.js:473:33)",
-              "/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:59",
-              "withoutDeprecationWarnings (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:229:16)",
-              "LegacyStackSynthesizer.addFileAsset (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:20)",
-              "new Asset (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:46:44)",
-              "Kernel._Kernel_create (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:10104:25)",
-              "Kernel.create (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:9775:93)",
-              "KernelHost.processRequest (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:11691:36)",
-              "KernelHost.run (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:11651:22)",
-              "Immediate._onImmediate (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:11652:46)",
-              "process.processImmediate (node:internal/timers:478:21)"
-            ]
-          }
-        ],
-        "/CdkTestStack/AssetParameters/00056d60aa682caf969e078fa13456af7552e0ae458512d84a456257f8442990/S3VersionKey": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "AssetParameters00056d60aa682caf969e078fa13456af7552e0ae458512d84a456257f8442990S3VersionKeyBD6D1C31",
-            "trace": [
-              "new FileAssetParameters (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:16:35)",
-              "LegacyStackSynthesizer.doAddFileAsset (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:189:22)",
-              "LegacyStackSynthesizer.addFileAsset (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:98:25)",
-              "Stack.addFileAsset (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/stack.js:473:33)",
-              "/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:59",
-              "withoutDeprecationWarnings (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:229:16)",
-              "LegacyStackSynthesizer.addFileAsset (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:20)",
-              "new Asset (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:46:44)",
-              "Kernel._Kernel_create (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:10104:25)",
-              "Kernel.create (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:9775:93)",
-              "KernelHost.processRequest (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:11691:36)",
-              "KernelHost.run (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:11651:22)",
-              "Immediate._onImmediate (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:11652:46)",
-              "process.processImmediate (node:internal/timers:478:21)"
-            ]
-          }
-        ],
-        "/CdkTestStack/AssetParameters/00056d60aa682caf969e078fa13456af7552e0ae458512d84a456257f8442990/ArtifactHash": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "AssetParameters00056d60aa682caf969e078fa13456af7552e0ae458512d84a456257f8442990ArtifactHash3125DC2E",
-            "trace": [
-              "new FileAssetParameters (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:20:38)",
-              "LegacyStackSynthesizer.doAddFileAsset (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:189:22)",
-              "LegacyStackSynthesizer.addFileAsset (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:98:25)",
-              "Stack.addFileAsset (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/stack.js:473:33)",
-              "/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:59",
-              "withoutDeprecationWarnings (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:229:16)",
-              "LegacyStackSynthesizer.addFileAsset (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:20)",
-              "new Asset (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:46:44)",
-              "Kernel._Kernel_create (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:10104:25)",
-              "Kernel.create (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:9775:93)",
-              "KernelHost.processRequest (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:11691:36)",
-              "KernelHost.run (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:11651:22)",
-              "Immediate._onImmediate (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:11652:46)",
-              "process.processImmediate (node:internal/timers:478:21)"
-            ]
+            "data": "MyFirstBucketPolicy3243DEFD"
           }
         ],
         "/CdkTestStack/CDKMetadata/Default": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "CDKMetadata",
-            "trace": [
-              "new MetadataResource (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/private/metadata-resource.js:22:30)",
-              "/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/private/synthesis.js:139:9",
-              "visit (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/private/synthesis.js:200:9)",
-              "visit (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/private/synthesis.js:197:9)",
-              "injectMetadataResources (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/private/synthesis.js:128:5)",
-              "Object.synthesize (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/private/synthesis.js:17:5)",
-              "App.synth (/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/jsii-kernel-5bebCa/node_modules/@aws-cdk/core/lib/stage.js:104:41)",
-              "/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:9851:172",
-              "Kernel._Kernel_ensureSync (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:10476:24)",
-              "Kernel.invoke (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:9851:102)",
-              "KernelHost.processRequest (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:11691:36)",
-              "KernelHost.run (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:11651:22)",
-              "Immediate._onImmediate (/private/var/folders/wv/j28mmkjs3yzgg8_gqqxnlssw0000gn/T/tmpu_tdunvm/lib/program.js:11652:46)",
-              "process.processImmediate (node:internal/timers:478:21)"
-            ]
+            "data": "CDKMetadata"
+          }
+        ],
+        "/CdkTestStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/CdkTestStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
           }
         ]
       },
       "displayName": "CdkTestStack"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
     }
   }
 }
