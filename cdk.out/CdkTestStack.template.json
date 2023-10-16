@@ -1,0 +1,77 @@
+{
+ "Resources": {
+  "MyFirstBucketB8884501": {
+   "Type": "AWS::S3::Bucket",
+   "Properties": {
+    "VersioningConfiguration": {
+     "Status": "Enabled"
+    }
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain",
+   "Metadata": {
+    "aws:cdk:path": "CdkTestStack/MyFirstBucket/Resource"
+   }
+  },
+  "MyFirstBucketPolicy3243DEFD": {
+   "Type": "AWS::S3::BucketPolicy",
+   "Properties": {
+    "Bucket": {
+     "Ref": "MyFirstBucketB8884501"
+    },
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "s3:GetObject",
+       "Effect": "Allow",
+       "Principal": {
+        "AWS": "*"
+       },
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::GetAtt": [
+            "MyFirstBucketB8884501",
+            "Arn"
+           ]
+          },
+          "/*"
+         ]
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkTestStack/MyFirstBucket/Policy/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/0WNXQqDMBCEz+J7XLXpAVq9gOgJwnZrU2sC2Q1Fgnevf9CnmW8YZiq4lFcos5v5co6PsUjoA0HqxeCo7swkqx2sG1TjHUuIKKp5utYEM5FQ2KAj9jEgLWpbSawh1RFH2punO6T1H4vzPz75gNrwOsE6N9stw/6+LKqd5eVdoaEqodLZm63NQ3RiJ4Lu0B9kUgP+xwAAAA=="
+   },
+   "Metadata": {
+    "aws:cdk:path": "CdkTestStack/CDKMetadata/Default"
+   }
+  }
+ },
+ "Parameters": {
+  "AssetParameters00056d60aa682caf969e078fa13456af7552e0ae458512d84a456257f8442990S3Bucket4247740D": {
+   "Type": "String",
+   "Description": "S3 bucket for asset \"00056d60aa682caf969e078fa13456af7552e0ae458512d84a456257f8442990\""
+  },
+  "AssetParameters00056d60aa682caf969e078fa13456af7552e0ae458512d84a456257f8442990S3VersionKeyBD6D1C31": {
+   "Type": "String",
+   "Description": "S3 key for asset version \"00056d60aa682caf969e078fa13456af7552e0ae458512d84a456257f8442990\""
+  },
+  "AssetParameters00056d60aa682caf969e078fa13456af7552e0ae458512d84a456257f8442990ArtifactHash3125DC2E": {
+   "Type": "String",
+   "Description": "Artifact hash for asset \"00056d60aa682caf969e078fa13456af7552e0ae458512d84a456257f8442990\""
+  }
+ }
+}
