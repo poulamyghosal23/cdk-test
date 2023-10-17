@@ -16,7 +16,7 @@ class CdkTestPipelineStack(Stack):
   def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
-        waterPipeline = CodePipeline.CodePipeLine(
+        waterPipeline = CodePipeline(
             self,
             "WaterPipeline",
             pipeline_name="WaterPipeline",
